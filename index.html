@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Spotify Web para Linux com Electron, reprodução em segundo plano e controles de mídia no GNOME.">
+  <meta name="theme-color" content="#101411">
+  <title>Spotify Web para Linux</title>
+  <link rel="icon" type="image/svg+xml" href="spotify.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="shell masthead">
+    <a class="brand" href="./"><img src="spotify.svg" width="26" height="26" alt=""> Spotify Web</a>
+    <nav aria-label="Navegação">
+      <a href="#instalacao">Instalação</a>
+      <a href="https://github.com/mcdalbu/spotify-web-linux">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="shell hero" aria-labelledby="titulo">
+      <div class="hero-content">
+        <h1 id="titulo">Spotify Web<br><span>para Linux.</span></h1>
+        <p>O player web do Spotify em uma janela própria. Feche a janela e continue ouvindo, com controles na bandeja e no GNOME.</p>
+        <div class="download">
+          <a class="button" href="https://github.com/mcdalbu/spotify-web-linux/releases/download/v0.1.1/spotify-web-electron-0.1.1-1.fc45.x86_64.rpm">Baixar RPM</a>
+          <span>v0.1.1 · Fedora 45 · x86_64</span>
+        </div>
+      </div>
+      <div class="hero-icon" aria-hidden="true">
+        <img src="spotify.svg" width="270" height="270" alt="">
+      </div>
+    </section>
+
+    <section class="shell features" aria-label="Recursos">
+      <div><h2>Toque em segundo plano</h2><p>A reprodução continua ao fechar a janela. Use <strong>Sair</strong> ou <kbd>Ctrl</kbd> + <kbd>Q</kbd> para encerrar.</p></div>
+      <div><h2>Controles no GNOME</h2><p>Veja a faixa e a capa no painel de mídia. Reproduza, pause ou mude de faixa pelo GNOME ou pela bandeja.</p></div>
+      <div><h2>Electron incluído</h2><p>O RPM vem com o navegador incorporado. A janela e os menus acompanham o tema do sistema.</p></div>
+    </section>
+
+    <section class="shell install" id="instalacao" aria-labelledby="instalacao-titulo">
+      <div>
+        <h2 id="instalacao-titulo">Instalação no Fedora</h2>
+        <p>Na pasta em que baixou o RPM, execute este comando. Depois, procure <strong>Spotify Web</strong> no lançador de aplicativos.</p>
+      </div>
+      <div>
+        <pre><code>sudo dnf install ./spotify-web-electron-0.1.1-1.fc45.x86_64.rpm</code></pre>
+        <div class="release-links">
+          <a href="https://github.com/mcdalbu/spotify-web-linux/releases/download/v0.1.1/spotify-web-electron-0.1.1-1.fc45.x86_64.rpm.sha256">Checksum SHA-256</a>
+          <a href="https://github.com/mcdalbu/spotify-web-linux/releases/tag/v0.1.1">Notas da versão</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell footer">
+    <p>Projeto independente. Spotify é uma marca de seus titulares.</p>
+    <a href="https://open.spotify.com/">Player web do Spotify</a>
+  </footer>
+</body>
+</html>
