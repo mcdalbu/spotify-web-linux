@@ -1,0 +1,17 @@
+{
+  "name": "spotify-web-linux",
+  "private": true,
+  "license": "MIT",
+  "packageManager": "pnpm@11.25.0",
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "setup:runtimes": "./scripts/node.sh scripts/runtimes.cjs",
+    "start": "./scripts/run-electron.sh --spotify",
+    "test": "./scripts/node.sh --test tests/*.test.cjs",
+    "test:live": "./scripts/node.sh tests/electron-live.cjs --spotify",
+    "build:rpm": "./scripts/node.sh scripts/build-electron.cjs --spotify"
+  },
+  "dependencies": {
+    "dbus-next": "0.10.2"
+  }
+}

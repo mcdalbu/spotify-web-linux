@@ -1,0 +1,6 @@
+.cache/
+build/
+dist/
+node_modules/
+electron-wrapper/*.node
+electron-wrapper/*.node.tmp

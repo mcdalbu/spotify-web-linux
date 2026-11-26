@@ -1,0 +1,18 @@
+[Desktop Entry]
+Type=Application
+Name=Spotify Web
+Comment=Spotify Web player with tray icon and desktop media controls
+Comment[pt_BR]=Player do Spotify Web com ícone na bandeja e controles de mídia
+Exec=spotify-web-electron
+Icon=io.github.amzml.SpotifyWeb
+Terminal=false
+Categories=AudioVideo;Audio;Player;
+StartupWMClass=io.github.amzml.SpotifyWeb
+StartupNotify=true
+Keywords=Music;Spotify;Streaming;
+Actions=Background;
+
+[Desktop Action Background]
+Name=Run in background
+Name[pt_BR]=Executar em segundo plano
+Exec=spotify-web-electron --background

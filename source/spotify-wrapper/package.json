@@ -1,0 +1,8 @@
+{
+  "name": "spotify-web-electron",
+  "productName": "Spotify Web",
+  "version": "0.1.1",
+  "main": "main.cjs",
+  "desktopName": "io.github.amzml.SpotifyWeb.desktop",
+  "license": "MIT"
+}

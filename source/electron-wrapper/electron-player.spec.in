@@ -1,0 +1,65 @@
+%global debug_package %{nil}
+%global __os_install_post %{nil}
+%global _build_id_links none
+Name:           @NAME@
+Version:        @VERSION@
+Release:        1%{?dist}
+Summary:        @PRODUCT@ Electron wrapper with tray and background playback
+License:        MIT AND BSD-3-Clause AND LGPL-2.1-or-later
+Source0:        %{name}-%{version}.tar.gz
+AutoReqProv:    no
+Requires:       gtk3
+Requires:       nss
+Requires:       nspr
+Requires:       alsa-lib
+Requires:       at-spi2-atk
+Requires:       libdrm
+Requires:       mesa-libgbm
+Requires:       libX11
+Requires:       libXcomposite
+Requires:       libXdamage
+Requires:       libXext
+Requires:       libXfixes
+Requires:       libXrandr
+Requires:       libxcb
+Requires:       libxkbcommon
+Requires:       cups-libs
+Requires:       dbus-libs
+Requires:       glib2
+Requires:       pango
+Requires:       cairo
+Requires:       libstdc++
+Requires:       libgcc
+Requires:       systemd-libs
+Requires:       expat
+Requires:       glibc >= 2.34
+Requires:       xdg-utils
+
+%description
+Standalone @PRODUCT@ web wrapper with a bundled CastLabs Electron runtime.
+Includes a tray icon, close-to-background audio, GNOME MPRIS controls and a
+matching desktop/shelf icon. Chrome, Chromium and Node.js are not required.
+@PRODUCT@ authentication and a working Widevine component are required for
+protected playback. GNOME requires a tray extension to display indicator icons.
+
+%prep
+%setup -q
+
+%build
+
+%install
+mkdir -p %{buildroot}/opt/%{name}
+cp -a payload/. %{buildroot}/opt/%{name}/
+install -Dm755 payload/@WRAPPER@/%{name} %{buildroot}%{_bindir}/%{name}
+install -Dm644 payload/@WRAPPER@/@DESKTOP_ID@.desktop %{buildroot}%{_datadir}/applications/@DESKTOP_ID@.desktop
+install -Dm644 payload/assets/@ICON@.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/@DESKTOP_ID@.svg
+install -Dm644 payload/assets/@ICON@.png %{buildroot}%{_datadir}/icons/hicolor/512x512/apps/@DESKTOP_ID@.png
+
+%files
+%{_bindir}/%{name}
+%{_datadir}/applications/@DESKTOP_ID@.desktop
+%{_datadir}/icons/hicolor/scalable/apps/@DESKTOP_ID@.svg
+%{_datadir}/icons/hicolor/512x512/apps/@DESKTOP_ID@.png
+/opt/%{name}
+
+@CHANGELOG@
